@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+    LoadRepoInfo();
+  </script>
+</head>
+
+<body>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Repo Info</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-warning text-center" id="StatusMessage">
+            <strong>Wait!</strong> Loading Repo Info... </div>
+          <ul class="list-group ">
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="repoVersion"> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="numObjects">Number of Objects: </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="repoSize">Repo Size: </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="storageMax">Max Storage: </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="repoPath">Repo Path: </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+</html>

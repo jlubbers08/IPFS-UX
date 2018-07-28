@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <script>
+    document.getElementById("commandInput").onkeyup = function (e) {
+        if (e.keyCode == 13) {
+            runCommand();
+        }
+    };
+  </script>
+</head>
+
+<body>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>IPFS Interface</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="lead">Here you can run javascript commands to access the IPFS api. The API is stored in a variable called "ipfs". The output of the command will display below if valid.
+            <br>
+            <strong>There is no need to add a function to the API though.</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+            <u>EX: ipfs.swarm.peers();</u>
+          </p>
+          <p class="">
+            <a href="https://github.com/ipfs/js-ipfs-api#api" target="_blank">The API Documentation can be found here. </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">
+          <input style="width:100%;" id="commandInput" type="text"> </div>
+        <div class="col-md-2">
+          <a class="btn btn-primary" href="#" onclick="runCommand();">Run Command</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="mb-0">Response</p>
+          <pre id="responseArea">&nbsp;</pre> </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

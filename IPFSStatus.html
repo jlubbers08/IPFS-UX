@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+  <script>
+    SetupNodeStatus();
+  </script>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>Node Status</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="NodeId"> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="agentVersion"> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="protocolVersion"> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="ipfsVersion"> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="commit"> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="repoVersion"> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="goLanguage"> </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center" id="System"> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class=" text-center">Addresses</h2>
+          <ul class="list-group" id="NodeAddresses"> </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

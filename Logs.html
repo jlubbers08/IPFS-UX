@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+      getLogs();
+
+
+      $('#btnDelete').confirmation({
+          rootSelector: 'btnDelete',
+          buttons:[
+              {
+                  class:'btn btn-success',
+                  iconClass: 'material-icons',
+                  iconContent: 'check',
+                  label: 'Continue'
+              },{
+                  class:'btn btn-danger',
+                  iconClass: 'material-icons',
+                  iconContent: 'close',
+                  label: 'Nope'
+              }
+          ],
+          title: "Are you sure",
+          content: "This will delete all your current logs.",
+          onConfirm:deleteLogs
+          // other options
+      });
+  </script>
+</head>
+
+<body>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>IPFS Logs</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-0">
+    <div class="container"> </div>
+  </div>
+  <div class="py-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="btn btn-danger" id="btnDelete" href="#" >
+            <i class="fa fa-fw fa-trash-o"></i>&nbsp;Delete Logs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-hover table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th>Date Logged</th>
+                <th>Message</th>
+                <th>Code Location</th>
+                <th>Line #</th>
+              </tr>
+            </thead>
+            <tbody id="LogsTable"> </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

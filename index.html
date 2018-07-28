@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+    <!--<script src="js/popper.js"></script>-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <script src="./js/IpfsApi.js"></script>
+  <script src="./js/CustomJS.js"></script>
+  <script src="./js/jquery-3.2.1.min.js"></script>
+  <script src="./js/IPFSjs.js"></script>
+  <!-- Bootstrap styles -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<!-- Generic page styles -->
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!--<link rel="stylesheet" href="material_icons.min.css">-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="FileUploader/css/style.css">
+
+<!-- blueimp Gallery styles -->
+<link rel="stylesheet" href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+<!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+<link rel="stylesheet" href="FileUploader/css/jquery.fileupload.css">
+<link rel="stylesheet" href="FileUploader/css/jquery.fileupload-ui.css">
+<!-- CSS adjustments for browsers with JavaScript disabled -->
+<noscript><link rel="stylesheet" href="FileUploader/css/jquery.fileupload-noscript.css"></noscript>
+<noscript><link rel="stylesheet" href="FileUploader/css/jquery.fileupload-ui-noscript.css"></noscript>
+
+    <script src="FileUploader/js/app.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+
+    <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+    <script src="FileUploader/js/vendor/jquery.ui.widget.js"></script>
+    <!-- The Templates plugin is included to render the upload/download listings -->
+    <script src="https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="https://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <!-- blueimp Gallery script -->
+    <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script src="FileUploader/js/jquery.iframe-transport.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="FileUploader/js/jquery.fileupload.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="FileUploader/js/jquery.fileupload-process.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="FileUploader/js/jquery.fileupload-image.js"></script>
+    <!-- The File Upload audio preview plugin -->
+    <script src="FileUploader/js/jquery.fileupload-audio.js"></script>
+    <!-- The File Upload video preview plugin -->
+    <script src="FileUploader/js/jquery.fileupload-video.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script src="FileUploader/js/jquery.fileupload-validate.js"></script>
+    <!-- The File Upload user interface plugin -->
+    <script src="FileUploader/js/jquery.fileupload-ui.js"></script>
+    <!-- The main application script -->
+    <script src="FileUploader/js/main.js"></script>
+
+    <!-- The XDomainRequest Transport is included for cross-domain file deletion for IE 8 and IE 9 -->
+    <!--[if (gte IE 8)&(lt IE 10)]>
+    <script src="FileUploader/js/cors/jquery.xdr-transport.js"></script>
+    <![endif]-->
+  <style>
+    .collapse.in {
+      display: block;
+    }
+  </style>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/bootstrap-confirmation.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/jquery.tzCheckbox.js"></script>
+    <link rel="stylesheet" href="js/jquery.tzCheckbox.css">
+</head>
+
+<body id="displayBodyt">
+  <nav class="navbar navbar-expand-md bg-primary navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">IPFS Manager</a>
+      <button id="navBarToggle" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent">
+        <span class="fa fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="LoadPage('IPFSStatus');">
+              <i class="fa d-inline fa-lg fa-lightbulb-o"></i>&nbsp;Node Status</a>
+          </li>
+            <!--<li class="nav-item">-->
+                <!--<a class="nav-link" href="#" onclick="LoadPage('configeditor');">-->
+                    <!--<i class="fa d-inline fa-lg fa-wrench"></i>&nbsp;IPFS Config</a>-->
+            <!--</li>-->
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="LoadPage('Repo');">
+              <i class="fa fa-fw fa-database"></i>Repo Stats
+              <br> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="LoadPage('config');">
+              <i class="fa d-inline fa-lg fa-cog"></i>&nbsp;API Config
+              <br> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="LoadPage('FileUploader/index')">
+              <i class="fa fa-fw fa-plus-square-o"></i>Add Files</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="LoadPage('peers');">
+              <i class="fa fa-fw fa-link"></i>&nbsp;Peers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="LoadPage('console');">
+              <i class="fa fa-fw fa-keyboard-o"></i>&nbsp;Interface</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="LoadPage('Logs');">
+              <i class="fa fa-fw fa-align-center"></i>&nbsp;Logs</a>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+  <div class="container" id="MainContainer"></div>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+  <!--<script src="./js/bootstrap4.0.0.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+  <!--<script src="./js/bootstrap3.3.7.min.js"></script>-->
+  <!--<script>-->
+    <!--LoadPage('FileUploader/index');-->
+  <!--</script>-->
+  <div id="cover">
+      <div id="spinner"></div>
+      <div id="messageBox">
+          <div id="loadingMessage"></div>
+      </div>
+
+  </div>
+
+
+  <script>
+      setupDataBase();
+      // wait(100);
+     setupConfig();
+      // wait(100);
+     checkConnection();
+  </script>
+</body>
+
+</html>
